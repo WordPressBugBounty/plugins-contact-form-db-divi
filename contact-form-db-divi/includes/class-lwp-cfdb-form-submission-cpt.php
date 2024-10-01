@@ -19,6 +19,15 @@ class Lwp_Cfdb_Form_Submission_CPT {
             10,
             1
         );
+        // Filter the post columns to add and remove columns on the post type page
+        add_filter( 'manage_lwp_form_submission_posts_columns', array($this, 'updated_columns') );
+        // Show the relevant data in the custom columns for the post type
+        add_action(
+            'manage_lwp_form_submission_posts_custom_column',
+            array($this, 'updated_columns_data'),
+            10,
+            2
+        );
         //
         if ( $is_free_version ) {
             add_action( 'admin_notices', array($this, 'free_version_notice') );
@@ -95,6 +104,57 @@ class Lwp_Cfdb_Form_Submission_CPT {
             unset($actions['inline hide-if-no-js']);
         }
         return $actions;
+    }
+
+    //===========================================================================================
+    /**
+     * Add new columns to the form submission CPT
+     */
+    function updated_columns( $columns ) {
+        // Remove the default 'date' column
+        unset($columns['date']);
+        //Add custom columns
+        $columns['read_status'] = __( 'Read', 'contact-form-db-divi' );
+        $columns['email'] = __( 'Email', 'contact-form-db-divi' );
+        $columns['date_submitted'] = __( 'Date Submitted', 'contact-form-db-divi' );
+        //
+        return $columns;
+    }
+
+    //===========================================================================================
+    /**
+     * Show relevant data in the updated columns on the form submission CPT
+     */
+    function updated_columns_data( $column, $post_id ) {
+        //
+        $additional_details = get_post_meta( $post_id, 'additional_details', true );
+        $submission_details = get_post_meta( $post_id, 'processed_fields_values', true );
+        $read_status = get_post_meta( $post_id, 'lwp_cfdb_read_status', true );
+        $read_date = get_post_meta( $post_id, 'lwp_cfdb_read_date', true );
+        switch ( $column ) {
+            case 'page_name':
+                break;
+            case 'email':
+                if ( isset( $submission_details['email'] ) && isset( $submission_details['email']['value'] ) ) {
+                    echo esc_html( $submission_details['email']['value'] );
+                }
+                break;
+            case 'date_submitted':
+                if ( isset( $additional_details['date_submitted'] ) ) {
+                    echo esc_html( $additional_details['date_submitted'] );
+                }
+                break;
+            case 'read_status':
+                if ( isset( $read_status ) && $read_status == false ) {
+                    echo '<span class="dashicons dashicons-email-alt"></span>';
+                } else {
+                    echo '<span>' . esc_html( ( isset( $read_date ) ? $read_date : '' ) ) . '</span>';
+                }
+                break;
+            default:
+                // Break out of switch statement for unknown column names
+                break;
+        }
     }
 
     //===========================================================================================

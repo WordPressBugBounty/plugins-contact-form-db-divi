@@ -41,6 +41,12 @@ class Lwp_Cfdb_Form_Submission_Meta_Boxes {
      */
     function render_form_submission_meta_box__free( $post ) {
         $submission_details = get_post_meta( $post->ID, 'processed_fields_values', true );
+        $read_status = get_post_meta( $post->ID, 'lwp_cfdb_read_status', true );
+        //
+        if ( false == $read_status ) {
+            update_post_meta( $post->ID, 'lwp_cfdb_read_status', true );
+            update_post_meta( $post->ID, 'lwp_cfdb_read_date', current_time( 'mysql' ) );
+        }
         ?>
 
 		<table class="wp-list-table widefat fixed striped" style="margin-bottom:10px;">

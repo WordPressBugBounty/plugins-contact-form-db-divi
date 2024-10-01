@@ -2,9 +2,9 @@
 Contributors: themeythemes, freemius
 Tags: divi, divi contact form db, divi contact form database, contact form database
 Requires at least: 5.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,18 +27,18 @@ The plugin stores a range of data for each form submission, including all form s
 * Stores every submission in the database
 * Ability to view submissions in the WordPress Dashboard
 * Only supports specific form fields with field ID 'name', 'email', and 'message'.
+* Tracks when the submission was "read"
 
 **Pro Version Features**
 
 Upgrade to the Pro version of Contact Form DB to unlock even more powerful features, including:
 
-* Stores all the form fields in the database
+* Storing all the form fields in the database
 * Export form submissions in CSV format
 * Tracks the page on which the form was submitted
 * Records the date and time of each form submission
-* Tracks when the submission was "read"
 
-Upgrade to the Pro Version for only **$9** to take advantage of all these additional features and more!
+Upgrade to the Pro Version starting at **$9** to take advantage of all these additional features and more!
 
 Don't miss out – [Upgrade for only $9 Today!](https://www.learnhowwp.com/divi-contact-form-db/)
 
@@ -68,8 +68,7 @@ If you have any questions or feature ideas please create a new thread in Support
 After you activate the plugin, a new menu item will appear in the WordPress Dashboard by the name of "Divi Form DB."
 
 = What is the difference between Free and Pro versions? =
-The free version of the plugin offers basic form submission and supports only specific form fields with Field IDs 'name', 'email', and 'message', which are the default fields in a Divi Contact Form. Other custom fields in the form will not be saved with the free version.
-
+The free version of the plugin offers basic form submission and supports only specific form fields with Field IDs 'name', 'email', and 'message', which are the default fields in a Divi Contact Form. Other custom fields in the form are saved but are only visible with the Pro version.
 = How can I view the form submission? =
 You can easily view any form submission by simply clicking the "View Form Submission" link on the Divi Form DB page.
 
@@ -100,6 +99,11 @@ The plugin is designed to store form submissions in the WordPress database and d
 = How do I delete old or unnecessary form submissions from the Contact Form DB database? =
 To delete old or unnecessary form submissions from the Contact Form DB database, simply locate the submission you wish to delete and click the "Trash" link next to it. This will move the submission to the trash, where it will be permanently deleted after 30 days (or sooner if you empty the trash manually).
 
+= Is the free version of Contact Form DB useful if it only tracks name, email, and message fields?=
+Absolutely! The free version of Contact Form DB ensures that you always have access to the most critical information from your form submissions, even if email delivery fails due to unreliable server or mail functions. This basic functionality provides a vital safety net, capturing essential details like name, email, and message to prevent data loss.
+
+For those who need more comprehensive data tracking and additional features, such as viewing all form fields, exporting data, and accessing detailed submission information, the Pro version is available for a small yearly membership fee. Upgrading unlocks the full potential of the plugin, giving you complete control and access to all your form submission data.
+
 = I bought the plugin but the license is not working? =
 If you're experiencing issues with your plugin license, it's important to clarify that our plugin, developed from scratch in April 2023, might share a similar name with other plugins, but it's not affiliated with existing developers or platforms such as Elegant Marketplace. It is only available for download from our official channels: [learnhowwp.com](https://learnhowwp.com/divi-contact-form-db/) or [Divi Marketplace](https://www.elegantthemes.com/affiliates/idevaffiliate.php?id=72724&url=79560)
 
@@ -108,6 +112,13 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.2.4 =
+* Fix warning on Reply via Email button when 'email' field does not exist.
+* Add View and Edit links next to page name in Additional Details metabox.
+* Make 'Read' and 'Email' columns available in the free version.
+* Track read status and date of form submissions in the free version.
+* Automatically deactivate free version when Pro version is activated.
 
 = 1.2.3 =
 * Add option to add additional details in the export csv file.
