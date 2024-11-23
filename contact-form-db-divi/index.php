@@ -4,7 +4,7 @@
 Plugin Name: Contact Form DB Divi
 Plugin URI: https://www.learnhowwp.com/divi-contact-form-db/
 Description: The plugin saves all form submission made to Divi forms in the WordPress backend.
-Version: 1.2.4
+Version: 1.2.5
 Author: Learnhowwp.com
 Author URI: https://learnhowwp.com
 License: GPL2
@@ -17,7 +17,7 @@ if ( function_exists( 'lwp_cfdd_fs' ) ) {
     lwp_cfdd_fs()->set_basename( false, __FILE__ );
 } else {
     // A constant to store the current version of the plugin
-    define( 'LWP_CFDB_VERSION', '1.2.4' );
+    define( 'LWP_CFDB_VERSION', '1.2.5' );
     // A global variable to check if the version of the plugin is the free version
     global $is_free_version;
     //======================================================================================

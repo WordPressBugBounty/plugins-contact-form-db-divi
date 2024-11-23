@@ -2,9 +2,9 @@
 Contributors: themeythemes, freemius
 Tags: divi, divi contact form db, divi contact form database, contact form database
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,7 +38,7 @@ Upgrade to the Pro version of Contact Form DB to unlock even more powerful featu
 * Tracks the page on which the form was submitted
 * Records the date and time of each form submission
 
-Upgrade to the Pro Version starting at **$9** to take advantage of all these additional features and more!
+Upgrade to the Pro Version for only **$9** to take advantage of all these additional features and more!
 
 Don't miss out – [Upgrade for only $9 Today!](https://www.learnhowwp.com/divi-contact-form-db/)
 
@@ -69,6 +69,7 @@ After you activate the plugin, a new menu item will appear in the WordPress Dash
 
 = What is the difference between Free and Pro versions? =
 The free version of the plugin offers basic form submission and supports only specific form fields with Field IDs 'name', 'email', and 'message', which are the default fields in a Divi Contact Form. Other custom fields in the form are saved but are only visible with the Pro version.
+
 = How can I view the form submission? =
 You can easily view any form submission by simply clicking the "View Form Submission" link on the Divi Form DB page.
 
@@ -112,6 +113,10 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.2.5 =
+* Allow Editors to access the Export CSV settings page.
+* Update Freemius SDK to version 2.9.0.
 
 = 1.2.4 =
 * Fix warning on Reply via Email button when 'email' field does not exist.
