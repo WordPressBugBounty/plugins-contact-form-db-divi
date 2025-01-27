@@ -4,7 +4,7 @@ Tags: divi, divi contact form db, divi contact form database, contact form datab
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -113,6 +113,10 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.2.6 =
+* Added "Previous" and "Next" buttons to form submissions to make it easier to navigate between entries.
+* Update Freemius SDK to version 2.11.0.
 
 = 1.2.5 =
 * Allow Editors to access the Export CSV settings page.

@@ -31,6 +31,15 @@ class Lwp_Cfdb_Form_Submission_Meta_Boxes {
             'normal',
             'high'
         );
+        // Navigation Meta Box
+        add_meta_box(
+            'form-submission-navigation',
+            __( 'Navigation', 'contact-form-db-divi' ),
+            array($this, 'render_form_submission_navigation_meta_box'),
+            'lwp_form_submission',
+            'side',
+            'high'
+        );
     }
 
     //===========================================================================================
@@ -117,6 +126,45 @@ class Lwp_Cfdb_Form_Submission_Meta_Boxes {
 		<?php 
         }
         ?>
+
+		<?php 
+    }
+
+    //===========================================================================================
+    /**
+     * Callback function to render the Navigation Meta Box.
+     *
+     * @param WP_Post $post The current post being edited.
+     */
+    function render_form_submission_navigation_meta_box( $post ) {
+        $next_submission = get_adjacent_post( false, '', false );
+        $previous_submission = get_adjacent_post( false, '', true );
+        ?>
+
+		<div class="submission-navigation">
+			<?php 
+        if ( $previous_submission ) {
+            ?>
+				<a href="<?php 
+            echo esc_url( admin_url( 'post.php?post=' . $previous_submission->ID . '&action=edit' ) );
+            ?>" class="button"><?php 
+            esc_html_e( 'Previous', 'contact-form-db-divi' );
+            ?></a>
+			<?php 
+        }
+        ?>
+			<?php 
+        if ( $next_submission ) {
+            ?>
+				<a href="<?php 
+            echo esc_url( admin_url( 'post.php?post=' . $next_submission->ID . '&action=edit' ) );
+            ?>" class="button"><?php 
+            esc_html_e( 'Next', 'contact-form-db-divi' );
+            ?></a>
+			<?php 
+        }
+        ?>
+		</div>
 
 		<?php 
     }
