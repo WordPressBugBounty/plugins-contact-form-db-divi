@@ -4,7 +4,7 @@ Tags: divi, divi contact form db, divi contact form database, contact form datab
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.2.6
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,7 @@ Upgrade to the Pro version of Contact Form DB to unlock even more powerful featu
 
 * Storing all the form fields in the database
 * Export form submissions in CSV format
+* Create posts directly from form submission values
 * Tracks the page on which the form was submitted
 * Records the date and time of each form submission
 
@@ -113,6 +114,11 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.3.0 =
+* WordPress coding standard fixes.
+* Added Post Creation feature allowing users to create a post from form submission values.
+* Added WordPress rating and review notice requesting a review after 7 days.
 
 = 1.2.6 =
 * Added "Previous" and "Next" buttons to form submissions to make it easier to navigate between entries.

@@ -4,7 +4,7 @@
  * Represents a custom post type for storing form submissions.
  */
 class Lwp_Cfdb_Form_Submission_CPT {
-    //===========================================================================================
+    // ===========================================================================================
     /**
      * Constructor function that registers the custom post type and filters the post row actions.
      */
@@ -19,28 +19,27 @@ class Lwp_Cfdb_Form_Submission_CPT {
             10,
             1
         );
-        // Filter the post columns to add and remove columns on the post type page
+        // Filter the post columns to add and remove columns on the post type page.
         add_filter( 'manage_lwp_form_submission_posts_columns', array($this, 'updated_columns') );
-        // Show the relevant data in the custom columns for the post type
+        // Show the relevant data in the custom columns for the post type.
         add_action(
             'manage_lwp_form_submission_posts_custom_column',
             array($this, 'updated_columns_data'),
             10,
             2
         );
-        //
         if ( $is_free_version ) {
             add_action( 'admin_notices', array($this, 'free_version_notice') );
         }
     }
 
-    //===========================================================================================
+    // ===========================================================================================
     /**
      * Registers the custom post type for form submissions.
      */
     public function register_post_type() {
         global $is_free_version;
-        // Query form submissions where read status is false
+        // Query form submissions where read status is false.
         $args = array(
             'post_type'      => 'lwp_form_submission',
             'posts_per_page' => -1,
@@ -51,7 +50,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
             )),
         );
         $query = new WP_Query($args);
-        // Get the count of unread form submissions
+        // Get the count of unread form submissions.
         $count = $query->found_posts;
         $labels = array(
             'name'               => _x( 'Divi Form DB', 'post type general name', 'contact-form-db-divi' ),
@@ -91,7 +90,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
         register_post_type( 'lwp_form_submission', $args );
     }
 
-    //===========================================================================================
+    // ===========================================================================================
     /**
      * Disables the quick edit action for form submission posts.
      *
@@ -106,27 +105,25 @@ class Lwp_Cfdb_Form_Submission_CPT {
         return $actions;
     }
 
-    //===========================================================================================
+    // ===========================================================================================
     /**
      * Add new columns to the form submission CPT
      */
     function updated_columns( $columns ) {
-        // Remove the default 'date' column
+        // Remove the default 'date' column.
         unset($columns['date']);
-        //Add custom columns
+        // Add custom columns.
         $columns['read_status'] = __( 'Read', 'contact-form-db-divi' );
         $columns['email'] = __( 'Email', 'contact-form-db-divi' );
         $columns['date_submitted'] = __( 'Date Submitted', 'contact-form-db-divi' );
-        //
         return $columns;
     }
 
-    //===========================================================================================
+    // ===========================================================================================
     /**
      * Show relevant data in the updated columns on the form submission CPT
      */
     function updated_columns_data( $column, $post_id ) {
-        //
         $additional_details = get_post_meta( $post_id, 'additional_details', true );
         $submission_details = get_post_meta( $post_id, 'processed_fields_values', true );
         $read_status = get_post_meta( $post_id, 'lwp_cfdb_read_status', true );
@@ -152,12 +149,12 @@ class Lwp_Cfdb_Form_Submission_CPT {
                 }
                 break;
             default:
-                // Break out of switch statement for unknown column names
+                // Break out of switch statement for unknown column names.
                 break;
         }
     }
 
-    //===========================================================================================
+    // ===========================================================================================
     /**
      * Adds a notice to the free version of plugin on the single post page
      */
@@ -170,5 +167,5 @@ class Lwp_Cfdb_Form_Submission_CPT {
         }
     }
 
-    //===========================================================================================
+    // ===========================================================================================
 }
