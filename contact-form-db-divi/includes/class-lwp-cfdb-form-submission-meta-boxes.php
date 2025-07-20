@@ -8,11 +8,11 @@ class Lwp_Cfdb_Form_Submission_Meta_Boxes {
     /**
      * Registers the metaboxes for form submission CPT based on the version being used (free/premium).
      *
-     * @global bool $is_free_version Whether the current version of the plugin is free or premium.
+     * @global bool $lwp_cfdb_is_free_version Whether the current version of the plugin is free or premium.
      */
     public function __construct() {
-        global $is_free_version;
-        if ( $is_free_version ) {
+        global $lwp_cfdb_is_free_version;
+        if ( $lwp_cfdb_is_free_version ) {
             add_action( 'add_meta_boxes', array($this, 'add_form_submission_meta_boxes__free') );
         }
     }

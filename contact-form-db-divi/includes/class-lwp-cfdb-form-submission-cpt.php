@@ -9,7 +9,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
      * Constructor function that registers the custom post type and filters the post row actions.
      */
     public function __construct() {
-        global $is_free_version;
+        global $lwp_cfdb_is_free_version;
         // Register the custom post type on WordPress 'init' hook.
         add_action( 'init', array($this, 'register_post_type') );
         // Filter the post row actions to disable quick edit for form submissions.
@@ -28,7 +28,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
             10,
             2
         );
-        if ( $is_free_version ) {
+        if ( $lwp_cfdb_is_free_version ) {
             add_action( 'admin_notices', array($this, 'free_version_notice') );
         }
     }
@@ -38,7 +38,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
      * Registers the custom post type for form submissions.
      */
     public function register_post_type() {
-        global $is_free_version;
+        global $lwp_cfdb_is_free_version;
         // Query form submissions where read status is false.
         $args = array(
             'post_type'      => 'lwp_form_submission',
@@ -61,7 +61,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
             'new_item'           => __( 'New Divi Form Submission', 'contact-form-db-divi' ),
             'view_item'          => __( 'View Divi Form Submission', 'contact-form-db-divi' ),
             'search_items'       => __( 'Search Divi Form Submissions', 'contact-form-db-divi' ),
-            'all_items'          => ( $count && !$is_free_version ? sprintf( __( 'Divi Form DB <span class="menu-counter">%d</span>', 'contact-form-db-divi' ), $count ) : __( 'Divi Form DB', 'contact-form-db-divi' ) ),
+            'all_items'          => ( $count && !$lwp_cfdb_is_free_version ? sprintf( __( 'Divi Form DB <span class="menu-counter">%d</span>', 'contact-form-db-divi' ), $count ) : __( 'Divi Form DB', 'contact-form-db-divi' ) ),
             'not_found'          => __( 'No Divi form submissions found', 'contact-form-db-divi' ),
             'not_found_in_trash' => __( 'No Divi form submissions found in Trash', 'contact-form-db-divi' ),
             'parent_item_colon'  => '',

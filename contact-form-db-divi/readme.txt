@@ -4,7 +4,7 @@ Tags: divi, divi contact form db, divi contact form database, contact form datab
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,9 @@ After you activate the plugin, a new menu item will appear in the WordPress Dash
 = What is the difference between Free and Pro versions? =
 The free version of the plugin offers basic form submission and supports only specific form fields with Field IDs 'name', 'email', and 'message', which are the default fields in a Divi Contact Form. Other custom fields in the form are saved but are only visible with the Pro version.
 
+= What is the minimum Divi version required? =
+The Divi Contact Form DB plugin requires at least version 4.13.1 of the Divi theme. This is because the plugin depends on a specific hook that was introduced in Divi 4.13.1 (released in 2021). If you are using an older version of Divi, the plugin will not function correctly. Please update your Divi theme to version 4.13.1 or higher before using this plugin.
+
 = How can I view the form submission? =
 You can easily view any form submission by simply clicking the "View Form Submission" link on the Divi Form DB page.
 
@@ -114,6 +117,11 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.3.1 =
+* Rename plugin file from index.php to contact-form-db-divi.php.
+* Add empty index.php files to plugin directories for security.
+* Rename global variable is_free_version to lwp_cfdb_is_free_version to prevent conflicts.
 
 = 1.3.0 =
 * WordPress coding standard fixes.
