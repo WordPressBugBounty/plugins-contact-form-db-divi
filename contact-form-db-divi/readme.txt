@@ -2,9 +2,9 @@
 Contributors: themeythemes, freemius
 Tags: divi, divi contact form db, divi contact form database, contact form database
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,11 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.3.2 =
+* Improved CSV export by skipping invalid or empty form submissions.
+* Automatically set a fallback unique ID for form submissions when missing.
+* Added an "All" option to export every form submission, regardless of contact form unique ID.
 
 = 1.3.1 =
 * Rename plugin file from index.php to contact-form-db-divi.php.

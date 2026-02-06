@@ -59,7 +59,8 @@ class Lwp_Cfdb_Form_Submission_Creator {
 		update_post_meta( $post_id, 'additional_details', $additional_details );
 
 		// Save the 'contact_form_unique_id'.
-		update_post_meta( $post_id, 'lwp_cfdb_contact_form_unique_id', $contact_form_info['contact_form_unique_id'] );
+		$unique_id = ! empty( $contact_form_info['contact_form_unique_id'] ) ? $contact_form_info['contact_form_unique_id'] : '00000000-0000-0000-0000-000000000000';
+		update_post_meta( $post_id, 'lwp_cfdb_contact_form_unique_id', $unique_id );
 
 		// Save the page ID.
 		update_post_meta( $post_id, 'lwp_cfdb_page_id', $current_page_id );
