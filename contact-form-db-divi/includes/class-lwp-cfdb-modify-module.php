@@ -12,6 +12,7 @@ class Lwp_Cfdb_Modify_Module {
 	 */
 	public function __construct() {
 		add_filter( 'et_pb_all_fields_unprocessed_et_pb_contact_form', array( $this, 'add_contact_form_setting' ) );
+		add_action( 'divi_visual_builder_assets_before_enqueue_scripts', array( $this, 'enqueue_divi5_unique_id_script' ) );
 	}
 
 	// ===========================================================================================
@@ -35,6 +36,31 @@ class Lwp_Cfdb_Modify_Module {
 		);
 
 		return array_merge( $fields_unprocessed, $fields );
+	}
+
+	// ===========================================================================================
+
+	/**
+	 * Enqueue Divi 5 Unique ID field script
+	 */
+	public function enqueue_divi5_unique_id_script() {
+		// Only load in Divi 5 Visual Builder.
+		if ( ! function_exists( 'et_core_is_fb_enabled' ) || ! et_core_is_fb_enabled() ) {
+			return;
+		}
+
+		// Check if Divi 5 is enabled.
+		if ( ! function_exists( 'et_builder_d5_enabled' ) || ! et_builder_d5_enabled() ) {
+			return;
+		}
+
+		wp_enqueue_script(
+			'lwp-cfdb-divi5-unique-id',
+			plugin_dir_url( __DIR__ ) . 'assets/js/unique-id-field.js',
+			array( 'divi-module-library', 'divi-vendor-wp-hooks' ),
+			LWP_CFDB_VERSION,
+			true
+		);
 	}
 
 	// ===========================================================================================

@@ -2,9 +2,9 @@
 Contributors: themeythemes, freemius
 Tags: divi, divi contact form db, divi contact form database, contact form database
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,9 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
 == Changelog ==
+
+= 1.3.3 =
+* Add Unique ID field display to Divi 5 contact form module settings.
 
 = 1.3.2 =
 * Improved CSV export by skipping invalid or empty form submissions.

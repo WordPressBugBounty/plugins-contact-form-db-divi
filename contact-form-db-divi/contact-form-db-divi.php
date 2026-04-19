@@ -4,7 +4,7 @@
 Plugin Name: Contact Form DB Divi
 Plugin URI: https://www.learnhowwp.com/divi-contact-form-db/
 Description: The plugin saves all form submission made to Divi forms in the WordPress backend.
-Version: 1.3.2
+Version: 1.3.3
 Author: Learnhowwp.com
 Author URI: https://learnhowwp.com
 License: GPL2
@@ -17,11 +17,9 @@ if ( function_exists( 'lwp_cfdd_fs' ) ) {
     lwp_cfdd_fs()->set_basename( false, __FILE__ );
 } else {
     // A constant to store the current version of the plugin.
-    define( 'LWP_CFDB_VERSION', '1.3.2' );
+    define( 'LWP_CFDB_VERSION', '1.3.3' );
     // A global variable to check if the version of the plugin is the free version.
     global $lwp_cfdb_is_free_version;
-    // ======================================================================================
-    // ======================================================================================
     if ( !function_exists( 'lwp_cfdd_fs' ) ) {
         // Create a helper function for easy SDK access.
         function lwp_cfdd_fs() {
@@ -30,23 +28,24 @@ if ( function_exists( 'lwp_cfdd_fs' ) ) {
                 // Include Freemius SDK.
                 require_once __DIR__ . '/freemius/start.php';
                 $lwp_cfdd_fs = fs_dynamic_init( array(
-                    'id'             => '12368',
-                    'slug'           => 'contact-form-db-divi',
-                    'type'           => 'plugin',
-                    'public_key'     => 'pk_8adb28c6b3dfc2364477c03a441d8',
-                    'is_premium'     => false,
-                    'premium_suffix' => 'Pro',
-                    'has_addons'     => false,
-                    'has_paid_plans' => true,
-                    'anonymous_mode' => true,
-                    'trial'          => array(
+                    'id'               => '12368',
+                    'slug'             => 'contact-form-db-divi',
+                    'type'             => 'plugin',
+                    'public_key'       => 'pk_8adb28c6b3dfc2364477c03a441d8',
+                    'is_premium'       => false,
+                    'premium_suffix'   => 'Pro',
+                    'has_addons'       => false,
+                    'has_paid_plans'   => true,
+                    'anonymous_mode'   => true,
+                    'trial'            => array(
                         'days'               => 7,
                         'is_require_payment' => false,
                     ),
-                    'menu'           => array(
+                    'menu'             => array(
                         'slug' => 'edit.php?post_type=lwp_form_submission',
                     ),
-                    'is_live'        => true,
+                    'is_live'          => true,
+                    'is_org_compliant' => true,
                 ) );
             }
             return $lwp_cfdd_fs;
