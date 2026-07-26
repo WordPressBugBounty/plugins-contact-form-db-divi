@@ -1,4 +1,9 @@
 <?php
+/**
+ * Creates form submission posts from Divi contact form entries.
+ *
+ * @package Contact_Form_DB_Divi
+ */
 
 /**
  * Class to add new posts on form submissions
@@ -23,7 +28,7 @@ class Lwp_Cfdb_Form_Submission_Creator {
 	 * @param array $et_contact_error           Whether there is an error on the form entry submit process or not.
 	 * @param array $contact_form_info          An array of post row actions.
 	 */
-	function add_new_post( $processed_fields_values, $et_contact_error, $contact_form_info ) {
+	public function add_new_post( $processed_fields_values, $et_contact_error, $contact_form_info ) {
 
 		if ( $et_contact_error == true ) {
 			return;

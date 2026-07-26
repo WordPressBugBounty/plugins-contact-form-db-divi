@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Provides a lightweight Freemius fallback implementation.
+ *
+ * @package Contact_Form_DB_Divi
+ */
+/**
  * An alternative class to enable premium functionality for ET Marketplace
  * which is disabled by Freemius SDK.
  */

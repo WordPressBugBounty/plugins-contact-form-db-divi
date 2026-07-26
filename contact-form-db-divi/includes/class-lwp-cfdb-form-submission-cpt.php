@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Registers and manages the form submission custom post type.
+ *
+ * @package Contact_Form_DB_Divi
+ */
+/**
  * Represents a custom post type for storing form submissions.
  */
 class Lwp_Cfdb_Form_Submission_CPT {
@@ -97,7 +102,7 @@ class Lwp_Cfdb_Form_Submission_CPT {
      * @param array $actions An array of post row actions.
      * @return array The updated array of post row actions.
      */
-    function disable_quick_edit_form_submission( $actions ) {
+    public function disable_quick_edit_form_submission( $actions ) {
         global $post;
         if ( $post->post_type == 'lwp_form_submission' ) {
             unset($actions['inline hide-if-no-js']);
@@ -107,9 +112,12 @@ class Lwp_Cfdb_Form_Submission_CPT {
 
     // ===========================================================================================
     /**
-     * Add new columns to the form submission CPT
+     * Adds custom columns to the form submission post list table.
+     *
+     * @param array $columns Existing list table columns.
+     * @return array Updated list table columns.
      */
-    function updated_columns( $columns ) {
+    public function updated_columns( $columns ) {
         // Remove the default 'date' column.
         unset($columns['date']);
         // Add custom columns.
@@ -121,9 +129,13 @@ class Lwp_Cfdb_Form_Submission_CPT {
 
     // ===========================================================================================
     /**
-     * Show relevant data in the updated columns on the form submission CPT
+     * Outputs data for custom form submission columns.
+     *
+     * @param string $column Current column name.
+     * @param int    $post_id Current post ID.
+     * @return void
      */
-    function updated_columns_data( $column, $post_id ) {
+    public function updated_columns_data( $column, $post_id ) {
         $additional_details = get_post_meta( $post_id, 'additional_details', true );
         $submission_details = get_post_meta( $post_id, 'processed_fields_values', true );
         $read_status = get_post_meta( $post_id, 'lwp_cfdb_read_status', true );
@@ -157,8 +169,10 @@ class Lwp_Cfdb_Form_Submission_CPT {
     // ===========================================================================================
     /**
      * Adds a notice to the free version of plugin on the single post page
+     *
+     * @return void
      */
-    function free_version_notice() {
+    public function free_version_notice() {
         global $pagenow, $typenow;
         if ( $pagenow == 'post.php' && $typenow == 'lwp_form_submission' ) {
             echo '<div class="notice notice-info">

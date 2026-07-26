@@ -74,34 +74,30 @@ class Lwp_Cfdb_Rating {
 			return;
 		}
 
-		$nonce        = wp_create_nonce( 'lwp_cfdb_nonce' );
-		$dont_disturb = esc_url( get_admin_url() . '?lwp_cfdb_spare_me=1&lwp_cfdb_nonce=' . $nonce );
-		$dont_show    = esc_url( get_admin_url() . '?lwp_cfdb_spare_me=1&lwp_cfdb_nonce=' . $nonce );
-		$plugin_info  = 'Divi Contact Form DB';
-		$reviewurl    = esc_url( 'https://wordpress.org/support/plugin/contact-form-db-divi/reviews/?filter=5' );
+		$nonce = wp_create_nonce( 'lwp_cfdb_nonce' );
 
-        // phpcs:disable
-        // All variables in the printf are escaped in the start of the function.
 		printf(
-			__(
-				'<div class="wrap notice notice-info">
+			wp_kses_post(
+				// translators: %1$s: plugin name, %2$s: review URL, %3$s: dismiss link (already rated), %4$s: dismiss link (do not show again).
+				__(
+					'<div class="wrap notice notice-info">
                         <div style="margin:10px 0px;">
-                            <p>Hello! Seems like you are using <strong> %s </strong> plugin on your Divi website. &#127775; If you\'ve found it helpful, could you take a moment to rate us 5 stars &#127775; on WordPress? It would mean the world to us and help others choose the right plugin. Thank you!</p>
+                            <p>Hello! Seems like you are using <strong> %1$s </strong> plugin on your Divi website. &#127775; If you\'ve found it helpful, could you take a moment to rate us 5 stars &#127775; on WordPress? It would mean the world to us and help others choose the right plugin. Thank you!</p>
                         </div>
                         <div class="button-group" style="margin:10px 0px;">
                             <a href="%2$s" class="button button-primary" target="_blank" style="margin-right:10px;">Ok,you deserve it</a>
-                            <span class="dashicons dashicons-smiley"></span><a href="%3$s" class="button button-link" style="margin-right:10px; margin-left:3px;">I already did</a>
-                            <a href="%4$s" class="button button-link"> Don\'t show this again.</a>
+                            <a href="%3$s" class="button-secondary" style="margin-right:10px; margin-left:3px;"><span class="dashicons dashicons-smiley"></span> I already did</a>
+                            <a href="%4$s" class="button-secondary"> Don\'t show this again.</a>
                         </div>
                     </div>',
-				'contact-form-db-divi'
+					'contact-form-db-divi'
+				)
 			),
-			$plugin_info,
-			$reviewurl,
-			$dont_disturb,
-			$dont_show
+			esc_html__( 'Divi Contact Form DB', 'contact-form-db-divi' ),
+			esc_url( 'https://wordpress.org/support/plugin/contact-form-db-divi/reviews/?filter=5' ),
+			esc_url( get_admin_url() . '?lwp_cfdb_spare_me=1&lwp_cfdb_nonce=' . $nonce ),
+			esc_url( get_admin_url() . '?lwp_cfdb_spare_me=1&lwp_cfdb_nonce=' . $nonce )
 		);
-        // phpcs:enable
 	}
 
 	// ===========================================================================================

@@ -1,15 +1,17 @@
 <?php
 
-/*
-Plugin Name: Contact Form DB Divi
-Plugin URI: https://www.learnhowwp.com/divi-contact-form-db/
-Description: The plugin saves all form submission made to Divi forms in the WordPress backend.
-Version: 1.3.3
-Author: Learnhowwp.com
-Author URI: https://learnhowwp.com
-License: GPL2
-Text Domain: contact-form-db-divi
-*/
+/**
+ * Plugin Name: Contact Form DB Divi
+ * Plugin URI: https://www.learnhowwp.com/divi-contact-form-db/
+ * Description: The plugin saves all form submission made to Divi forms in the WordPress backend.
+ * Version: 1.4.1
+ * Author: Learnhowwp.com
+ * Author URI: https://learnhowwp.com
+ * License: GPL2
+ * Text Domain: contact-form-db-divi
+ *
+ * @package Contact_Form_DB_Divi
+ */
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
@@ -17,11 +19,18 @@ if ( function_exists( 'lwp_cfdd_fs' ) ) {
     lwp_cfdd_fs()->set_basename( false, __FILE__ );
 } else {
     // A constant to store the current version of the plugin.
-    define( 'LWP_CFDB_VERSION', '1.3.3' );
+    define( 'LWP_CFDB_VERSION', '1.4.1' );
+    define( 'LWP_CFDB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
     // A global variable to check if the version of the plugin is the free version.
     global $lwp_cfdb_is_free_version;
+    // ======================================================================================
+    // ======================================================================================
     if ( !function_exists( 'lwp_cfdd_fs' ) ) {
-        // Create a helper function for easy SDK access.
+        /**
+         * Provides access to the Freemius SDK instance.
+         *
+         * @return object Freemius SDK instance.
+         */
         function lwp_cfdd_fs() {
             global $lwp_cfdd_fs;
             if ( !isset( $lwp_cfdd_fs ) ) {
@@ -68,6 +77,7 @@ if ( function_exists( 'lwp_cfdd_fs' ) ) {
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-form-submission-cpt.php';
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-form-submission-meta-boxes.php';
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-form-submission-creator.php';
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-dashboard-widget.php';
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-modify-module.php';
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-upgrades.php';
     require_once plugin_dir_path( __FILE__ ) . 'includes/class-lwp-cfdb-rating.php';
@@ -75,6 +85,7 @@ if ( function_exists( 'lwp_cfdd_fs' ) ) {
     new Lwp_Cfdb_Form_Submission_CPT();
     new Lwp_Cfdb_Form_Submission_Meta_Boxes();
     new Lwp_Cfdb_Form_Submission_Creator();
+    new Lwp_Cfdb_Dashboard_Widget();
     new Lwp_Cfdb_Modify_Module();
     // ======================================================================================
     register_activation_hook( __FILE__, array(new Lwp_Cfdb_Rating(), 'activation_time') );

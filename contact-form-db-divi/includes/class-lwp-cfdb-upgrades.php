@@ -1,4 +1,9 @@
 <?php
+/**
+ * Defines upgrade routines for plugin data migrations.
+ *
+ * @package Contact_Form_DB_Divi
+ */
 
 /**
  * A class to handle upgrades for the plugin

@@ -1,0 +1,108 @@
+#lwp_cfdb_dashboard_widget .summary {
+	display: flex;
+	gap: 16px;
+	margin: 0 0 16px;
+	flex-wrap: wrap;
+}
+
+#lwp_cfdb_dashboard_widget .summary-card {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex: 1 1 185px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-left-width: 4px;
+	border-radius: 4px;
+	padding: 10px 12px;
+	box-sizing: border-box;
+}
+
+#lwp_cfdb_dashboard_widget .summary-card--unread,
+#lwp_cfdb_dashboard_widget .summary-card--total {
+	border-left-color: #2271b1;
+}
+
+#lwp_cfdb_dashboard_widget .summary-icon {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	line-height: 1;
+}
+
+#lwp_cfdb_dashboard_widget .summary-card--unread .summary-icon,
+#lwp_cfdb_dashboard_widget .summary-card--total .summary-icon {
+	color: #2271b1;
+}
+
+#lwp_cfdb_dashboard_widget .summary-content {
+	display: flex;
+	flex-direction: column;
+}
+
+#lwp_cfdb_dashboard_widget .summary-count {
+	font-size: 2em;
+	font-weight: 700;
+	line-height: 1;
+}
+
+#lwp_cfdb_dashboard_widget .summary-card--unread .summary-count,
+#lwp_cfdb_dashboard_widget .summary-card--total .summary-count {
+	color: #2271b1;
+}
+
+#lwp_cfdb_dashboard_widget .summary-label {
+	margin-top: 4px;
+	color: #646970;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+#lwp_cfdb_dashboard_widget .resources {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 16px;
+}
+
+#lwp_cfdb_dashboard_widget .resources-label {
+	font-weight: 600;
+	color: #1d2327;
+}
+
+#lwp_cfdb_dashboard_widget .resource-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	text-decoration: none;
+}
+
+#lwp_cfdb_dashboard_widget .resource-link .dashicons,
+#lwp_cfdb_dashboard_widget .upgrade-link::after {
+	font-size: 14px;
+	width: 14px;
+	height: 14px;
+	line-height: 1;
+}
+
+#lwp_cfdb_dashboard_widget .upgrade {
+	margin-top: 16px;
+	padding-top: 12px;
+	border-top: 1px solid #dcdcde;
+	color: #646970;
+}
+
+#lwp_cfdb_dashboard_widget .upgrade-link {
+	font-weight: 600;
+}
+
+@media screen and (max-width: 782px) {
+	#lwp_cfdb_dashboard_widget .summary {
+		flex-direction: column;
+	}
+
+	#lwp_cfdb_dashboard_widget .summary-card {
+		flex-basis: auto;
+	}
+}

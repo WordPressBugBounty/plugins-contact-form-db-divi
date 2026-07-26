@@ -2,9 +2,9 @@
 Contributors: themeythemes, freemius
 Tags: divi, divi contact form db, divi contact form database, contact form database
 Requires at least: 5.0
-Tested up to: 6.9
-Requires PHP: 5.6
-Stable tag: 1.3.3
+Tested up to: 7.0
+Requires PHP: 7.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ The Contact Form DB plugin is designed to provide an easy way to store and manag
 
 == Description ==
 
-The Contact Form DB Divi plugin is designed to provide an easy way to store and manage form submissions on your Divi website. The plugin stores all Divi contact form submissions in the WordPress database.
+The Contact Form DB Divi plugin is designed to provide an easy way to store and manage form submissions on your Divi website. The plugin stores all Divi contact form submissions in the WordPress database. This plugin is compatible with Divi 5, and with Divi 4.
 
 Want to get started? Check out our Getting Started article, "[Saving Form Submission in the Database](https://www.learnhowwp.com/save-divi-contact-form-submission-database/)", to learn how to start using the plugin and make the most of its features.
 
@@ -45,7 +45,7 @@ Don't miss out – [Upgrade for only $9 Today!](https://www.learnhowwp.com/divi-
 
 Looking for more information on the plugin or want to buy it on my website? Check out [Divi Contact Form DB](https://www.learnhowwp.com/divi-contact-form-db/) page on our website for more information.
 
-Or, buy the plugin on [Divi Marketplace](https://www.elegantthemes.com/affiliates/idevaffiliate.php?id=72724&url=79560), a trusted marketplace for Divi-related products.
+Or, buy the plugin on [Divi Marketplace](https://www.elegantthemes.com/affiliates/idevaffiliate.php?id=72724&url=79560), the official marketplace for Divi products.
 
 https://www.youtube.com/watch?v=02jkCpG1kXA
 
@@ -59,6 +59,8 @@ https://www.youtube.com/watch?v=02jkCpG1kXA
 
 If you have any questions or feature ideas please create a new thread in Support.
 
+For full documentation visit: [Divi Contact Form DB Documentation](https://learnhowwp.com/documentation/contact-form-db-divi/)
+
 == Installation ==
 1. Upload the plugin `.zip` file to the `/wp-content/plugins/` directory
 2. Activate the plugin through the `Plugins` page in your `WordPress Dashboard`.
@@ -70,6 +72,9 @@ After you activate the plugin, a new menu item will appear in the WordPress Dash
 
 = What is the difference between Free and Pro versions? =
 The free version of the plugin offers basic form submission and supports only specific form fields with Field IDs 'name', 'email', and 'message', which are the default fields in a Divi Contact Form. Other custom fields in the form are saved but are only visible with the Pro version.
+
+= Does this plugin work with Divi 5? =
+Yes, Contact Form DB Divi is fully compatible with both Divi version 5 and Divi version 4 (as long as you are using at least Divi 4.13.1 or higher). You can safely use this plugin on sites running either version of Divi.
 
 = What is the minimum Divi version required? =
 The Divi Contact Form DB plugin requires at least version 4.13.1 of the Divi theme. This is because the plugin depends on a specific hook that was introduced in Divi 4.13.1 (released in 2021). If you are using an older version of Divi, the plugin will not function correctly. Please update your Divi theme to version 4.13.1 or higher before using this plugin.
@@ -116,7 +121,18 @@ Please ensure that you have purchased our plugin from either Divi Marketplace or
 
 We recommend checking your original purchase email to confirm where you bought the plugin before seeking support.
 
+= Where can I find documentation? =
+Full documentation and usage instructions are available at: [Divi Contact Form DB Documentation](https://learnhowwp.com/documentation/contact-form-db-divi/)
+
 == Changelog ==
+
+= 1.4.1 =
+* Corrected text domain typo in the Divi Contact Form module "Unique ID" label.
+* Refactored the rating notice for improved WordPress coding standards compliance and updated styling for WordPress 7.0.
+* Updated Freemius SDK to version 2.13.1.
+
+= 1.4.0 =
+* Added a WordPress dashboard widget with summary cards and recent submissions.
 
 = 1.3.3 =
 * Add Unique ID field display to Divi 5 contact form module settings.

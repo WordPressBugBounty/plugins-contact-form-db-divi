@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Handles form submission meta boxes.
+ *
+ * @package Contact_Form_DB_Divi
+ */
+/**
  * Class to manage meta boxes on the lwp_form_submission post type
  */
 class Lwp_Cfdb_Form_Submission_Meta_Boxes {
@@ -48,7 +53,7 @@ class Lwp_Cfdb_Form_Submission_Meta_Boxes {
      *
      * @param WP_Post $post The current post being edited.
      */
-    function render_form_submission_meta_box__free( $post ) {
+    public function render_form_submission_meta_box__free( $post ) {
         $submission_details = get_post_meta( $post->ID, 'processed_fields_values', true );
         $read_status = get_post_meta( $post->ID, 'lwp_cfdb_read_status', true );
         if ( false == $read_status ) {
@@ -135,7 +140,7 @@ class Lwp_Cfdb_Form_Submission_Meta_Boxes {
      *
      * @param WP_Post $post The current post being edited.
      */
-    function render_form_submission_navigation_meta_box( $post ) {
+    public function render_form_submission_navigation_meta_box( $post ) {
         $next_submission = get_adjacent_post( false, '', false );
         $previous_submission = get_adjacent_post( false, '', true );
         ?>

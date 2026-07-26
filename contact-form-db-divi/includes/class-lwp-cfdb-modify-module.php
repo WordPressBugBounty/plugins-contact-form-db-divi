@@ -1,4 +1,9 @@
 <?php
+/**
+ * Modifies the Divi contact form module fields.
+ *
+ * @package Contact_Form_DB_Divi
+ */
 
 /**
  * Class to modify the contact form module
@@ -28,7 +33,7 @@ class Lwp_Cfdb_Modify_Module {
 		$fields = array();
 
 		$fields['_unique_id'] = array(
-			'label'           => __( 'Unique ID', 'contact-form-db-div' ),
+			'label'           => __( 'Unique ID', 'contact-form-db-divi' ),
 			'type'            => 'text',
 			'attributes'      => 'readonly',
 			'option_category' => 'basic_option',
