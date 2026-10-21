@@ -2,9 +2,9 @@
 Contributors: themeythemes, freemius
 Tags: divi, divi contact form db, divi contact form database, contact form database
 Requires at least: 5.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,11 @@ We recommend checking your original purchase email to confirm where you bought t
 Full documentation and usage instructions are available at: [Divi Contact Form DB Documentation](https://learnhowwp.com/documentation/contact-form-db-divi/)
 
 == Changelog ==
+
+= 1.4.2 =
+* Fixed a missing space in the rating notice button.
+* Made several untranslatable strings in the dashboard widget, export and submission details screens translatable.
+* Updated Freemius SDK to version 2.13.5.
 
 = 1.4.1 =
 * Corrected text domain typo in the Divi Contact Form module "Unique ID" label.

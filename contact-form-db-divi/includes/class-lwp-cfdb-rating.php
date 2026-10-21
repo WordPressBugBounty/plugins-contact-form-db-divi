@@ -85,7 +85,7 @@ class Lwp_Cfdb_Rating {
                             <p>Hello! Seems like you are using <strong> %1$s </strong> plugin on your Divi website. &#127775; If you\'ve found it helpful, could you take a moment to rate us 5 stars &#127775; on WordPress? It would mean the world to us and help others choose the right plugin. Thank you!</p>
                         </div>
                         <div class="button-group" style="margin:10px 0px;">
-                            <a href="%2$s" class="button button-primary" target="_blank" style="margin-right:10px;">Ok,you deserve it</a>
+                            <a href="%2$s" class="button button-primary" target="_blank" style="margin-right:10px;">Ok, you deserve it</a>
                             <a href="%3$s" class="button-secondary" style="margin-right:10px; margin-left:3px;"><span class="dashicons dashicons-smiley"></span> I already did</a>
                             <a href="%4$s" class="button-secondary"> Don\'t show this again.</a>
                         </div>

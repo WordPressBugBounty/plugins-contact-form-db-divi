@@ -108,7 +108,7 @@ class Lwp_Cfdb_Dashboard_Widget {
 			</div>
 		</div>
 
-		<h3 class="section-title">Recent Submissions</h3>
+		<h3 class="section-title"><?php esc_html_e( 'Recent Submissions', 'contact-form-db-divi' ); ?></h3>
 		<table class="wp-list-table widefat striped">
 			<thead>
 				<tr>
